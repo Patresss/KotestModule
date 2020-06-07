@@ -2,7 +2,6 @@
 
 To reproduce it (https://github.com/kotest/kotest/issues/1495) please just run the build task from the gradle. When I remove module-info.java it works.
 
-Please use gradle version max 6.0.1 due to https://github.com/beryx/badass-jlink-plugin/issues/116
 ```
 16:53:29: Executing task 'build'...
 
