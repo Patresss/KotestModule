@@ -18,7 +18,9 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
 
-    testImplementation "io.kotest:kotest-runner-junit5-jvm:4.0.6"
+    testImplementation ("io.kotest:kotest-runner-junit5-jvm:4.0.6") {
+        exclude group: 'io.mockk', module: 'mockk'
+    }
     testImplementation "io.kotest:kotest-assertions-core-jvm:4.0.6"
 
     implementation "log4j:log4j:1.2.17"

@@ -2,27 +2,27 @@
 
 To reproduce it (https://github.com/kotest/kotest/issues/1495) please just run the build task from the gradle. When I remove module-info.java it works.
 ```
-16:46:46: Executing task 'build'...
+16:53:29: Executing task 'build'...
 
 
 > Configure project :
 Found module name 'kotestModule'
 
-> Task :compileKotlin
+> Task :compileKotlin UP-TO-DATE
 > Task :compileJava
 > Task :processResources NO-SOURCE
 > Task :classes
-> Task :inspectClassesForKotlinIC
-> Task :jar
-> Task :startScripts
-> Task :distTar
-> Task :distZip
-> Task :assemble
-> Task :compileTestKotlin
+> Task :inspectClassesForKotlinIC UP-TO-DATE
+> Task :jar UP-TO-DATE
+> Task :startScripts UP-TO-DATE
+> Task :distTar UP-TO-DATE
+> Task :distZip UP-TO-DATE
+> Task :assemble UP-TO-DATE
+> Task :compileTestKotlin UP-TO-DATE
 > Task :compileTestJava NO-SOURCE
 > Task :processTestResources NO-SOURCE
 > Task :testClasses UP-TO-DATE
-Could not write standard input to Gradle Test Executor 25.
+Could not write standard input to Gradle Test Executor 26.
 java.io.IOException: The pipe is being closed
 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:354)
@@ -39,20 +39,21 @@ java.io.IOException: The pipe is being closed
 
 > Task :test FAILED
 Error occurred during initialization of boot layer
-java.lang.module.ResolutionException: Modules mockk and mockk.dsl.jvm export package io.mockk to module kotlinx.coroutines.core.common
-9 actionable tasks: 9 executed
+java.lang.module.ResolutionException: Modules kotest.assertions.jvm and kotest.assertions.core.jvm export package io.kotest.matchers to module kotest.fp.jvm
+9 actionable tasks: 2 executed, 7 up-to-date
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
 Execution failed for task ':test'.
-> Process 'Gradle Test Executor 25' finished with non-zero exit value 1
+> Process 'Gradle Test Executor 26' finished with non-zero exit value 1
 
 * Try:
 Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 2s
-16:46:49: Task execution finished 'build'.
+BUILD FAILED in 1s
+16:53:30: Task execution finished 'build'.
+
 ```
